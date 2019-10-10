@@ -1,9 +1,0 @@
-pipeline{
-	agent any
-	stages{
-		stage('Email Check'){
-			steps{
-				committerEmail = sh "
-      				script: 'git --no-pager show -s --format=\'%ae\'',
-      				returnStdout: true
-				).trim() "
