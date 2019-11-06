@@ -7,11 +7,7 @@ pytest-cov==2.7.1
 pylint
 oauth2client
 httplib2
-os
-sys
 apiclient
-argparse
-base64
 apiclient.discovery
 email.mime.text
 mimetypes
