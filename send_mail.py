@@ -59,7 +59,7 @@ from email.mime.text import MIMEText
 import mimetypes
 from httplib2 import Http
 
-from apiclient import errors
+# from apiclient import errors
 
 from apiclient.discovery import build
 
@@ -84,7 +84,7 @@ def SendMessage(service, user_id, message):
                    .execute())
         print('Message Id: %s' % message['id'])
         return message
-    except errors.HttpError as error:
+    except Exception as error:
         print('An error occurred: %s' % error)
 
 
