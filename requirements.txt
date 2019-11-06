@@ -8,6 +8,5 @@ pylint
 oauth2client
 httplib2
 apiclient
-apiclient.discovery
 email.mime.text
 mimetypes
