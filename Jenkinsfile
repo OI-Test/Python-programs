@@ -63,10 +63,7 @@ pipeline {
 			
 			
 			
-			gpg --no-tty --passphrase oiuser004 --output $WORKSPACE/\
-			.git-crypt/keys/default/0/decrypted.gpg --decrypt $WORKSPACE/\
-			.git-crypt/keys/default/0/1C2F6666BCEE13ED19DB9A7EF20AC4CF9DEE46B7.gpg\
-			&& git-crypt unlock $WORKSPACE/.git-crypt/keys/default/0/decrypted.gpg
+			gpg --no-tty --passphrase oiuser004 --output $WORKSPACE/.git-crypt/keys/default/0/decrypted.gpg --decrypt $WORKSPACE/.git-crypt/keys/default/0/1C2F6666BCEE13ED19DB9A7EF20AC4CF9DEE46B7.gpg && git-crypt unlock $WORKSPACE/.git-crypt/keys/default/0/decrypted.gpg
 			
 			
 			cat client_secret.json
