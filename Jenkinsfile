@@ -11,8 +11,11 @@ pipeline {
     stages {
 	    stage('Installing-Dependencies'){
 	    	steps{
-			sh 'sudo apt install -y python3-pip'
-			sh 'sudo pip3 install -r requirements.txt'
+			sh'''
+			sudo apt install -y python3-pip
+			pip3 install --upgrade google-api-python-client --user
+			pip3 install -r requirements.txt
+			'''
 		}
 	    }
 			    
@@ -26,21 +29,31 @@ pipeline {
 			sed -i "/pycache/d" files.txt
 			sed -i "/generator/d" files.txt
 			
+			
+			
 			### RENAMING ALL .PY FILES TO GENERATOR.PY ITERATIVELY FOR CONSISTENT TESTING. 
 			while read lines;
 			do  
 			echo ${lines};
 			cp Solutions/${lines} Solutions/generator.py
 			
+			
+			
 			### COVERAGE TESTS (COVERAGE MODULE)
 			python3 -m coverage run Solutions/${lines}
 			python3 -m coverage xml -o ./reports/${lines}_coverage.xml
 			
+			
+			
 			### UNIT TESTS (PYTEST MODULE)
 			python3 -m pytest -v Tests/test.py --junit-xml reports/${lines}_testresults.xml
 			
+			
+			
 			### STYLE CHECKS (PYLINT MODULE)
 			pylint --output-format=parseable --reports=no Solutions/${lines} > pylint.report || echo "pylint exited with $?"
+			
+			
 			
 			### CLEANING UP AND ENDING THE LOOP		
 			rm Solutions/generator.py
