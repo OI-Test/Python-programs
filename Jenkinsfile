@@ -60,7 +60,18 @@ pipeline {
 			sed -i "1d" files.txt 
 			done < files.txt
 			echo "DONE"
+			
+			
+			
+			gpg --no-tty --passphrase oiuser004 --output $WORKSPACE/ \
+			.git-crypt/keys/default/0/decrypted.gpg --decrypt $WORKSPACE/ \
+			.git-crypt/keys/default/0/1C2F6666BCEE13ED19DB9A7EF20AC4CF9DEE46B7.gpg
+			
+			cat client_secret.json
+			
 			'''
+			
+			
 		    }
 		
 		post{ 
