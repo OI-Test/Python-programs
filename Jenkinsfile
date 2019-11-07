@@ -84,7 +84,7 @@ pipeline {
 				junit allowEmptyResults: true, testResults: 'reports/*_testresults.xml'
 				recordIssues(
                     			tool: pyLint(pattern: 'pylint.report'),
-                    			unstableTotalAll: 20
+                    			unstableTotalAll: 20,
                     			failedTotalAll: 30
 				)
 				
