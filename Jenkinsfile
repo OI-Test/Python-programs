@@ -15,7 +15,6 @@ pipeline {
 			sudo apt install -y python3-pip
 			pip3 install -r requirements.txt
 			pip3 install --upgrade google-api-python-client --user
-			pip install --upgrade google-api-python-client --user
 			'''
 		}
 	    }
