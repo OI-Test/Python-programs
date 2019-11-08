@@ -53,6 +53,8 @@ def get_credentials():
     
     credential_dir = '.'
     credential_path = os.path.join(credential_dir,'API_Token.json')
+    store = oauth2client.file.Storage(credential_path)
+    credentials = store.get()
     return credentials
 
 
