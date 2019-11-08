@@ -51,8 +51,8 @@ def get_credentials():
         print('Storing credentials to ' + credential_path)
         """
     
-       credential_dir = '.'
-       credential_path = os.path.join(credential_dir,'API_Token.json')
+    credential_dir = '.'
+    credential_path = os.path.join(credential_dir,'API_Token.json')
     return credentials
 
 
