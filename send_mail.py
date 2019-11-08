@@ -30,6 +30,8 @@ def get_credentials():
     Returns:
         Credentials, the obtained credential.
     """
+    
+    """
     home_dir = os.path.expanduser('.')
     credential_dir = os.path.join(home_dir, '')
     if not os.path.exists(credential_dir):
@@ -47,6 +49,10 @@ def get_credentials():
         else:  # Needed only for compatability with Python 2.6
             credentials = tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
+        """
+    
+       credential_dir = '.'
+       credential_path = os.path.join(credential_dir,'API_Token.json')
     return credentials
 
 
