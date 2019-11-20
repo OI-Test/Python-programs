@@ -31,7 +31,7 @@ def get_credentials():
     Returns:
         Credentials, the obtained credential.
     """
-    
+    """
    
     home_dir = os.path.expanduser(os.environ['WORKSPACE'])
     # print(home_dir)
@@ -46,6 +46,9 @@ def get_credentials():
 #     print(store)
     credentials = store.get()
     print(credentials)
+    
+    """
+    
     """
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
@@ -56,13 +59,13 @@ def get_credentials():
             credentials = tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
     """    
-    """
+    
     credential_dir = ''
-    credential_path = (os.path.join(os.environ['WORKSPACE'],'/API_Token.json'))
-    store = oauth2client.file.Storage(credential_path)
+#     credential_path = (os.path.join(os.environ['WORKSPACE'],'/API_Token.json'))
+    store = oauth2client.file.Storage('API_Token.json')
     credentials = store.get()
     print(credentials)
-    """
+    
     return credentials
 
 
