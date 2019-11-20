@@ -19,7 +19,7 @@ except ImportError:
 SCOPES = 'https://mail.google.com/'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Gmail API Mails'
-print(os.environ['WORKSPACE'])
+# print(os.environ['WORKSPACE'])
 
 
 def get_credentials():
@@ -34,11 +34,11 @@ def get_credentials():
     
    
     home_dir = os.path.expanduser(os.environ['WORKSPACE'])
-    print(home_dir)
+    # print(home_dir)
     credential_dir = os.path.join(home_dir, 'API_Token.json')
     print(credential_dir)
-    if not os.path.exists(credential_dir):
-        os.makedirs(credential_dir)
+#     if not os.path.exists(credential_dir):
+#         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,
                                    'API_Token.json')
 
