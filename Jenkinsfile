@@ -82,7 +82,7 @@ pipeline {
 				)
 				
 				// SENDING EMAILS 
-				"""
+				/*
 				emailext (
 					subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
 					body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
@@ -94,7 +94,7 @@ pipeline {
 								    [$class: 'RequesterRecipientProvider']
 								]
 				    	)
-				"""
+				*/
 				}
 			}
 		}
