@@ -43,8 +43,9 @@ def get_credentials():
                                    'API_Token.json')
 
     store = oauth2client.file.Storage(credential_path)
-    print(store)
+#     print(store)
     credentials = store.get()
+    print credentials
     """
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
