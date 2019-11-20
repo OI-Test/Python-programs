@@ -34,6 +34,7 @@ def get_credentials():
     
    
     home_dir = os.path.expanduser(os.environ['WORKSPACE'])
+    print(home_dir)
     credential_dir = os.path.join(home_dir, 'API_Token.json')
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
