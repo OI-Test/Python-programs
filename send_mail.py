@@ -43,6 +43,7 @@ def get_credentials():
                                    'API_Token.json')
 
     store = oauth2client.file.Storage(credential_path)
+    print(store)
     credentials = store.get()
     """
     if not credentials or credentials.invalid:
