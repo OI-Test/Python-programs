@@ -3,7 +3,7 @@ pyinstaller
 pytest
 coverage==4.5.4
 behave==1.2.6
-pytest-cov==2.7.1
+#pytest-cov==2.7.1
 pylint
 oauth2client
 httplib2
