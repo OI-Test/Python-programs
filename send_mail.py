@@ -35,11 +35,11 @@ def get_credentials():
    
     home_dir = os.path.expanduser(os.environ['WORKSPACE'])
     # print(home_dir)
-    credential_dir = os.path.join(home_dir, 'API_Token.json')
+#     credential_dir = os.path.join(home_dir, 'API_Token.json')
     print(credential_dir)
 #     if not os.path.exists(credential_dir):
 #         os.makedirs(credential_dir)
-    credential_path = os.path.join(credential_dir,
+    credential_path = os.path.join(home_dir,
                                    'API_Token.json')
 
     store = oauth2client.file.Storage(credential_path)
