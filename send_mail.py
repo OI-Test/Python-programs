@@ -32,9 +32,9 @@ def get_credentials():
         Credentials, the obtained credential.
     """
     
-    """
-    home_dir = os.path.expanduser('.')
-    credential_dir = os.path.join(home_dir, '')
+   
+    home_dir = os.path.expanduser(os.environ['WORKSPACE'])
+    credential_dir = os.path.join(home_dir, 'API_Token.json')
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,
@@ -50,13 +50,14 @@ def get_credentials():
         else:  # Needed only for compatability with Python 2.6
             credentials = tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
-        """
-    
-#     credential_dir = ''
+        
+    """
+    credential_dir = ''
     credential_path = (os.path.join(os.environ['WORKSPACE'],'/API_Token.json'))
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
     print(credentials)
+    """
     return credentials
 
 
